@@ -1,14 +1,11 @@
 import bpy
 
-def enable_gpus(device_type, use_cpus=False):
+def enable_gpus(use_cpus=False):
     preferences = bpy.context.preferences
     cycles_preferences = preferences.addons["cycles"].preferences
     cuda_devices = cycles_preferences.get_devices()
 
-    if device_type == "CUDA":
-        devices = cuda_devices
-    else:
-        raise RuntimeError("Unsupported device type")
+    devices = cuda_devices
 
     activated_gpus = []
 
@@ -23,6 +20,5 @@ def enable_gpus(device_type, use_cpus=False):
     bpy.context.scene.cycles.device = "GPU"
 
     return activated_gpus
-
 
 enable_gpus("CUDA")
