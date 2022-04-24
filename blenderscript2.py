@@ -1,3 +1,5 @@
+import bpy
+
 def enable_gpus(device_type, use_cpus=False):
     preferences = bpy.context.preferences
     cycles_preferences = preferences.addons["cycles"].preferences
