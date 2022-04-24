@@ -7,6 +7,8 @@ def enable_gpus(use_cpus=False):
 
     devices = cuda_devices
 
+    print(devices)
+    
     activated_gpus = []
 
     for device in devices:
