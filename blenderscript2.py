@@ -21,4 +21,4 @@ def enable_gpus(use_cpus=False):
 
     return activated_gpus
 
-enable_gpus("CUDA")
+enable_gpus()
